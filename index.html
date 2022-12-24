@@ -6,82 +6,220 @@
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   
-  <title>Frontend Mentor | [Challenge Name Here]</title>
+  <title>Social Dashboard with Theme Switcher| Frontend Mentor</title>
 
+
+  <script src="https://kit.fontawesome.com/dd29961ac2.js" crossorigin="anonymous"></script>
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
     .attribution { font-size: 11px; text-align: center; }
     .attribution a { color: hsl(228, 45%, 44%); }
+
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 50px;
+      height: 24px;
+      margin: 0;
+    }
+    .switch input { 
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      -webkit-transition: .4s;
+      transition: .4s;
+    }
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 16px;
+      width: 16px;
+      left: 5px;
+      bottom: 4px;
+      background-color: rgb(124, 124, 124);
+      -webkit-transition: .4s;
+      transition: .4s;
+    }
+    input:checked + .slider {
+      background: linear-gradient(90deg,hsl(210, 78%, 56%), hsl(146, 68%, 55%));
+    }
+    input:focus + .slider {
+      box-shadow: 0 0 2px hsl(210, 78%, 56%);
+    }
+    input:checked + .slider:before {
+      -webkit-transform: translateX(24px);
+      -ms-transform: translateX(24px);
+      transform: translateX(24px);
+      background-color: rgb(255, 255, 255);
+    }
+    /* Rounded sliders */
+    .slider.round {
+      border-radius: 34px;
+    }
+    .slider.round:before {
+      border-radius: 50%;
+    }
+
   </style>
 </head>
 <body>
+  <div class="container">
+    <header class="space">
+      <div class="head">
+        <h1 class="head-topic">Social Media Dashboard</h1>
+        <h2 class="head-detail">Total Followers: 23,004</h2>
+      </div>
+      <div class="toggle-switch row-box">
+        <h6 id="theme-text">Dark Mode</h6> 
+        <label class="switch">
+          <input type="checkbox">
+          <span class="slider round"></span>
+        </label>
+      </div>
+    </header>
+    <article>
+      <section class="highlight-box row-box">
+        <div class="box">
+          <div class="head-color facebook"></div>
+          <div class="row-box">
+            <img src="./images/icon-facebook.svg" alt="icon-facebook" class="icon-img">
+            <h2 class="highlight-head">@nathanf</h2>
+          </div>
+          <h3 class="highlight-num num">1987</h3>
+          <h2 class="highlight-detail">Followers</h2>
+          <h4 class="growth up"><i class="fa-solid fa-caret-up"></i>12 Today</h4>
+        </div>
+        <div class="box">
+          <div class="head-color twitter"></div>
+          <div class="row-box">
+            <img src="./images/icon-twitter.svg" alt="icon-twitter" class="icon-img">
+            <h2 class="highlight-head">@nathanf</h2>
+          </div>
+          <h3 class="highlight-num num">1044</h3>
+          <h2 class="highlight-detail">Followers</h2>
+          <h4 class="growth up"><i class="fa-solid fa-caret-up"></i>99 Today</h4>
+        </div>
+        <div class="box">
+          <div class="head-color ig"></div>
+          <div class="row-box">
+            <img src="./images/icon-instagram.svg" alt="icon-instagram" class="icon-img">
+            <h2 class="highlight-head">@realnathanf</h2>
+          </div>
+          <h3 class="highlight-num num">11k</h3>
+          <h2 class="highlight-detail">Followers</h2>
+          <h4 class="growth up"><i class="fa-solid fa-caret-up"></i>1099 Today</h4>
+        </div>
+        <div class="box">
+          <div class="head-color youtube"></div>
+          <div class="row-box">
+            <img src="./images/icon-youtube.svg" alt="icon-youtube" class="icon-img">
+            <h2 class="highlight-head">Nathan F.</h2>
+          </div>
+          <h3 class="highlight-num num">8239</h3>
+          <h2 class="highlight-detail">Subscribers</h2>
+          <h4 class="growth down"><i class="fa-solid fa-caret-down"></i>144 Today</h4>
+        </div>
+      </section>
+      <h5 class="content-topic">Overview - Today</h5>
+      <section class="content-box row-box">
+        <div class="box">
+          <div class="content-head row-box space">
+            <h2 class="content">Page Views</h2>
+            <img src="./images/icon-facebook.svg" alt="icon-facebook" class="icon-img">
+          </div>
+          <div class="content-detail row-box space">
+            <h3 class="contentnum num">87</h3>
+            <h4 class="growth up"><i class="fa-solid fa-caret-up"></i>3%</h4>
+          </div>
+        </div>
+        <div class="box">
+          <div class="content-head row-box space">
+            <h2 class="content">Likes</h2>
+            <img src="./images/icon-facebook.svg" alt="icon-facebook" class="icon-img">
+          </div>
+          <div class="content-detail row-box space">
+            <h3 class="contentnum num">52</h3>
+            <h4 class="growth down"><i class="fa-solid fa-caret-down"></i>2%</h4>
+          </div>
+        </div>
+        <div class="box">
+          <div class="content-head row-box space">
+            <h2 class="content">Likes</h2>
+            <img src="./images/icon-instagram.svg" alt="icon-instagram" class="icon-img">
+          </div>
+          <div class="content-detail row-box space">
+            <h3 class="contentnum num">5462</h3>
+            <h4 class="growth up"><i class="fa-solid fa-caret-up"></i>2257%</h4>
+          </div>
+        </div>
+        <div class="box">
+          <div class="content-head row-box space">
+            <h2 class="content">Profile Views</h2>
+            <img src="./images/icon-instagram.svg" alt="icon-instagram" class="icon-img">
+          </div>
+          <div class="content-detail row-box space">
+            <h3 class="contentnum num">52k</h3>
+            <h4 class="growth up"><i class="fa-solid fa-caret-up"></i>1375%</h4>
+          </div>
+        </div>
+      </section>
+      <section class="detail-box row-box">
+        <div class="box">
+          <div class="content-head row-box space">
+            <h2 class="content">Retweets</h2>
+            <img src="./images/icon-twitter.svg" alt="icon-twitter" class="icon-img">
+          </div>
+          <div class="content-detail row-box space">
+            <h3 class="contentnum num">117</h3>
+            <h4 class="growth up"><i class="fa-solid fa-caret-up"></i>303%</h4>
+          </div>
+        </div>
+        <div class="box">
+          <div class="content-head row-box space">
+            <h2 class="content">Likes</h2>
+            <img src="./images/icon-twitter.svg" alt="icon-twitter" class="icon-img">
+          </div>
+          <div class="content-detail row-box space">
+            <h3 class="contentnum num">507</h3>
+            <h4 class="growth up"><i class="fa-solid fa-caret-up"></i>553%</h4>
+          </div>
+        </div>
+        <div class="box">
+          <div class="content-head row-box space">
+            <h2 class="content">Likes</h2>
+            <img src="./images/icon-youtube.svg" alt="icon-youtube" class="icon-img">
+          </div>
+          <div class="content-detail row-box space">
+            <h3 class="contentnum num">107</h3>
+            <h4 class="growth down"><i class="fa-solid fa-caret-down"></i>19%</h4>
+          </div>
+        </div>
+        <div class="box">
+          <div class="content-head row-box space">
+            <h2 class="content">Total Views</h2>
+            <img src="./images/icon-youtube.svg" alt="icon-youtube" class="icon-img">
+          </div>
+          <div class="content-detail row-box space">
+            <h3 class="contentnum num">1407</h3>
+            <h4 class="growth down"><i class="fa-solid fa-caret-down"></i>12%</h4>
+          </div>
+        </div>
+      </section>
+    </article>
+  </div>
 
-  Social Media Dashboard
-  Total Followers: 23,004
-
-  Dark Mode
-
-  
-
-  @nathanf
-  1987
-  Followers
-  12 Today
-
-  @nathanf
-  1044
-  Followers
-  99 Today
-
-  @realnathanf
-  11k
-  Followers
-  1099 Today
-
-  Nathan F.
-  8239
-  Subscribers
-  144 Today
-
-
-
-  Overview - Today
-
-  Page Views
-  87
-  3%
-
-  Likes
-  52
-  2%
-
-  Likes
-  5462
-  2257%
-
-  Profile Views
-  52k
-  1375%
-
-  Retweets
-  117
-  303%
-
-  Likes
-  507
-  553%
-
-  Likes
-  107
-  19%
-
-  Total Views
-  1407
-  12%
-  
   <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>
+    Coded by <a href="#">Pakapong S.</a>
   </div>
 </body>
 </html>
