@@ -140,3 +140,41 @@ h6 {
 
 .attribution { font-size: 11px; text-align: center; color: var(--text-color);}
 .attribution a { color: hsl(228, 45%, 44%); text-decoration: none; }
+
+@media only screen and (max-width:376px) {
+    .head-topic {
+        font-size: 20px;
+    }
+    .head-detail {
+        font-size: 14px;
+    }
+    header {
+        flex-direction: column;
+    }
+    .head {
+        border-bottom: 1px solid var(--text-color-second);
+    }
+    .head-detail {
+        margin-bottom: 10px;
+    }
+    .highlight-box , .content-box {
+        flex-direction: column;
+        margin: 0;
+    }
+    .box {
+        width: 100%;
+    }
+    .toggle-switch {
+        width: 100%;
+        justify-content: space-between;
+    }
+    #theme-text {
+        margin: 10px 0;
+        align-items: center;
+    }
+    input:checked + .slider:before {
+        -webkit-transform: translateX(24px);
+        -ms-transform: translateX(24px);
+        transform: translateX(24px);
+    }
+}
